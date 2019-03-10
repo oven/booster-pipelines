@@ -11,6 +11,9 @@ function status404(response) {
 
 const mimeTypes = {
     '.html': 'text/html',
+    '.css': 'text/css',
+    '.png': 'image/png',
+    '.jpg': 'image/jpeg',
     '.js': 'application/javascript'
 };
 
@@ -23,7 +26,7 @@ http.createServer((request, response) => {
     if (request.method === 'GET') {
 
         let filename = getFilename(request);
-        let filepath = path.resolve('./' + filename);
+        let filepath = path.resolve('./public/' + filename);
 
         let mimeType = mimeTypes[path.extname(filepath)];
         if (!mimeType) return status404(response);
