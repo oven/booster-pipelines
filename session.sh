@@ -86,7 +86,7 @@ heroku pipelines:promote --app booster-pipelines-staging
 #Make a small change to the app and push to github.
 
 echo "html {background-color: lightpink}" >> public/style.css
-git add . && git commit -m "it's pink!" && git push heroku
+git add . && git commit -m "it's pink!" && git push origin
 
 #Notice that the heroku console says "Building app". Let's open the app and check our work.
 :
